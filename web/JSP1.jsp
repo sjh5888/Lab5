@@ -36,8 +36,8 @@
                 String name = request.getParameter("name");
                 String salary = request.getParameter("salary");
 
-                out.print("<p>" + name + "</p>");
-                out.print("<p>" + salary + "</p>");
+                out.write("<p>" + name + "</p>");
+                out.write("<p>" + salary + "</p>");
             }
             //double salary = Double.valueOf(request.getParameter("salary"));
             //salary = salary/12;
