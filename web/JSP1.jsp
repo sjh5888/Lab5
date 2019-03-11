@@ -13,15 +13,35 @@
     </head>
     <body>
         <h1>First JSP Lab</h1>
-        <form action="eggs">
-            <input type="text" name="name"/>
-            <input type="text" name="salary"/>
-            <input type="submit" name="submit"/>
-        </form>
-        <% double salary = Double.valueOf(request.getParameter("salary"));
-            salary = salary/12;
-        %>
-        
+
+        <%String action = request.getParameter("action");
+          String url = "/JSP1.jsp";
+            if (action == null) {
+                out.write("<form action=\"submit\">");
+                out.write("<input type=\"text\" name=\"name\"/>");
+                out.write("<input type=\"text\" name=\"salary\"/>");
+                out.write("<input type=\"submit\" name=\"submit\"/>");
+                out.write("</form>");
+                
+                action = "add";
+               // request.setAttribute("name",name);
+              //  request.setAttribute("salary",salary);
+            } else if(action.equals("add")){          
+                
+                action = "sub";
+                getServletContext().getRequestDispatcher(url).forward(request, response);
+                
+            }else if(action.equals("sub")){
+               
+                String name = request.getParameter("name");
+                String salary = request.getParameter("salary");
+                
+                out.print("<p>" + salary + "</p>");
+            } 
+         //double salary = Double.valueOf(request.getParameter("salary"));
+            //salary = salary/12;
+         %>
+
         <p><% //out.print(salary);%></p>
         <p><%//request.getParameter("name"); %></p>
     </body>
