@@ -14,33 +14,33 @@
     <body>
         <h1>First JSP Lab</h1>
 
-        <%String action = request.getParameter("action");
-            String url = "/JSP1.jsp";
-            if (action == null) {
-                out.write("<form action=\"submit\">");
-                out.write("<input type=\"text\" name=\"name\"/>");
-                out.write("<input type=\"text\" name=\"salary\"/>");
-                out.write("<input type=\"submit\" name=\"submit\"/>");
-                out.write("</form>");
-
-                action = "add";
-                 //request.setAttribute("name",name);
-                //  request.setAttribute("salary",salary);
-            } else if (action.equals("add")) {
-
-                action = "sub";
-                getServletContext().getRequestDispatcher(url).forward(request, response);
-
-            } else if (action.equals("sub")) {
-
-                String name = request.getParameter("name");
-                String salary = request.getParameter("salary");
-
-                out.write("<p>" + name + "</p>");
-                out.write("<p>" + salary + "</p>");
+        <form action="JSP1.jsp">
+            <p>Name:</p> 
+            <input type= "text" name="name"/>
+            <p>Yearly Salary:</p> 
+            <input type= "text" name="salary"/>
+            <input type= "submit" value="submit"/>
+        </form>
+        
+        
+        <%
+            String name = request.getParameter("name");         
+            String salary = request.getParameter("salary");
+            
+            if (name != null) {
+               
+              try{ 
+                  double monthlySalary = Double.valueOf(salary);
+                  monthlySalary = monthlySalary/12;
+              
+               
+               out.println("<p>Name: " + name + "</p>");
+               out.println("<p>Salary: $" + monthlySalary + " per month.</p>");
+              
+              }catch(NumberFormatException e){
+                  out.println("<p>Please enter only numeric values in the salary box.</p>");
+              }
             }
-            //double salary = Double.valueOf(request.getParameter("salary"));
-            //salary = salary/12;
         %>
   
     </body>
