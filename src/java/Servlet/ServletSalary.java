@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author D'Clarkus Williams
+ * @author Steven Hansen
  */
 public class ServletSalary extends HttpServlet {
 
