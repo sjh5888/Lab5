@@ -1,7 +1,9 @@
 <%-- 
-    Document   : JSP1
+    Document   : JSP1.jsp
     Created on : Feb 28, 2019, 6:30:26 PM
-    Author     : D'Clarkus Williams
+    Author     : Steven Hansen
+    Purpose    : This class creates a basic web page with a form that takes information
+                 given in the form, interprets it, and provides basic output.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

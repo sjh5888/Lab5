@@ -1,9 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlet;
+
+/** 
+* IST 411 JSPandServlet Lab 
+*ServletSalary.java
+* Purpose: This class creates a basic web page with a form that takes information
+* given in the form, interprets it, and provides basic output.
+* @author Steven Hansen 
+* @version 1.0 2/28/19 
+*/ 
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,10 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Steven Hansen
- */
 public class ServletSalary extends HttpServlet {
 
     /**
@@ -35,10 +35,10 @@ public class ServletSalary extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ServletSalary</title>");
+            out.println("<title>JSP Lab 1</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ServletSalary at " + request.getContextPath() + "</h1>");
+            out.println("<h1>First JSP Lab</h1>");
 
             out.write("\n");
             out.write("        <form action=\"ServletSalary\">\n");
